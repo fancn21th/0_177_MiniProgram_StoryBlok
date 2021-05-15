@@ -4,26 +4,31 @@ import store from '../../store/index'
 //获取应用实例
 const app = getApp()
 
-create(store, {
+create.Component(store, {
   use: [
     'motto',
     'userInfo',
     'hasUserInfo',
-    'canIUse',
-    'newProp'
+    'canIUse'
   ],
   computed: {
-    reverseMotto() {
+    reverseMotto(scope) {
+      console.log(scope.data)
       return this.motto.split('').reverse().join('')
     }
   },
-  //事件处理函数
-  bindViewTap: function () {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+  data: {
+    name: 'omix'
   },
-  onLoad: function () {
+  methods:{
+    //事件处理函数
+    bindViewTap: function () {
+      wx.navigateTo({
+        url: '../logs/logs'
+      })
+    }
+  },
+  ready: function () {
     if (app.globalData.userInfo) {
       this.store.data.userInfo = app.globalData.userInfo
       this.store.data.hasUserInfo = true
@@ -55,17 +60,12 @@ create(store, {
       this.store.data.motto = 'abcdefg'
     }, 2000)
 
-    setTimeout(() => {
-      this.store.set(this.store.data, 'newProp', 'newPropVal')
-    }, 3000)
-
-
     const handler = function (evt) {
       console.log(evt)
     }
     store.onChange(handler)
 
-    //store.offChange(handler)
+    store.offChange(handler)
 
   },
   getUserInfo: function (e) {

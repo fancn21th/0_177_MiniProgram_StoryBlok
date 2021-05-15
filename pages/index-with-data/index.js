@@ -9,13 +9,16 @@ create(store, {
     'motto',
     'userInfo',
     'hasUserInfo',
-    'canIUse',
-    'newProp'
+    'canIUse'
   ],
   computed: {
-    reverseMotto() {
+    reverseMotto(scope) {
+      console.log(scope.data)
       return this.motto.split('').reverse().join('')
     }
+  },
+  data: {
+    name: 'omix'
   },
   //事件处理函数
   bindViewTap: function () {
@@ -55,17 +58,12 @@ create(store, {
       this.store.data.motto = 'abcdefg'
     }, 2000)
 
-    setTimeout(() => {
-      this.store.set(this.store.data, 'newProp', 'newPropVal')
-    }, 3000)
-
-
     const handler = function (evt) {
       console.log(evt)
     }
     store.onChange(handler)
 
-    //store.offChange(handler)
+    store.offChange(handler)
 
   },
   getUserInfo: function (e) {
