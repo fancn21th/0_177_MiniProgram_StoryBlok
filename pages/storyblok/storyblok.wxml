@@ -1,0 +1,11 @@
+<template name="grid">
+  <grid></grid>
+</template>
+
+<template name="product">
+  <product></product>
+</template>
+
+<block wx:for="{{season.bloks}}">
+  <template is="{{item.component}}" />
+</block>

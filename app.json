@@ -1,9 +1,10 @@
 {
   "pages": [
-		"pages/index/index",
-		"pages/component-as-page/index",
-		"pages/index-with-data/index",
-    "pages/logs/logs"
+    "pages/index/index",
+    "pages/component-as-page/index",
+    "pages/index-with-data/index",
+    "pages/logs/logs",
+    "pages/storyblok/storyblok"
   ],
   "window": {
     "backgroundTextStyle": "light",

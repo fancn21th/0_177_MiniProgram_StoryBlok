@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "product": "/components/product/product",
+    "grid": "/components/grid/grid"
+  }
+}
