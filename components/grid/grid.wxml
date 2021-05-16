@@ -1,1 +1,11 @@
-<view>Grid</view>
+<view class="grid-container">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{columns}}" wx:key="_uid" wx:for-index="idx">
+      <swiper-item>
+        <view class="grid-item-container grid-item-container-{{idx}}">
+          {{item.name}}
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

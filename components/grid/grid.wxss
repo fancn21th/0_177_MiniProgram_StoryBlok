@@ -1,1 +1,19 @@
-/* components/grid/grid.wxss */
+.grid-item-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+.grid-item-container-0 {
+  background-color: lightcoral;
+}
+
+.grid-item-container-1 {
+  background-color: lightgoldenrodyellow;
+}
+
+.grid-item-container-2 {
+  background-color: lightsalmon;
+}

@@ -1,1 +1,9 @@
-/* components/product/product.wxss */
+.product-container {
+  border: 1rpx solid blue;
+  padding: 5rpx;
+}
+
+.product-cover {
+  width: 200rpx;
+  height: 220rpx;
+}

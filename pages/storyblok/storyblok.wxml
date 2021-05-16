@@ -1,11 +1,11 @@
 <template name="grid">
-  <grid></grid>
+  <grid columns="{{columns}}"></grid>
 </template>
 
 <template name="product">
-  <product></product>
+  <product title="{{title}}" url="{{cover.filename}}"></product>
 </template>
 
-<block wx:for="{{season.bloks}}">
-  <template is="{{item.component}}" />
+<block wx:for="{{season.bloks}}" wx:key="_uid">
+  <template is="{{item.component}}" data="{{...item}}" />
 </block>

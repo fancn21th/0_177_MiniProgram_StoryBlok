@@ -1,1 +1,4 @@
-<view>Product</view>
+<view class="product-container">
+  <text>{{title}}</text>
+  <cover-image class="product-cover" src="{{url}}" />
+</view>
